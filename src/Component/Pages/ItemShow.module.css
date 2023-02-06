@@ -1,0 +1,17 @@
+.showitem {
+    margin: 1rem 0;
+    background: #742935;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    border-radius: 1rem;
+    color: white;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+   
+  }
+
+  .showitem button{
+    margin-right: 1rem
+  }
+

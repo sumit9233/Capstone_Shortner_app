@@ -1,0 +1,44 @@
+.google {
+    text-align: center;
+    margin: auto;
+    font-family: cursive;
+    font-size: larger;
+    
+}
+
+.google h2 {
+    color:rgb(173, 48, 29);
+}
+
+.google p {
+    color: black
+}
+
+.login {
+    text-align: center;
+}
+
+.logged {
+   padding: 2rem;
+}
+
+.logged p {
+    font-size: large;
+    color:rgb(64, 39, 88);
+    font-weight: bold;
+    font-style:initial;
+    
+}
+
+
+.google img{
+    
+    max-width: 4cm;
+    border:min-content; 
+    align-items: center;
+}
+
+.logout{
+    margin-left: 80%;
+}
+
