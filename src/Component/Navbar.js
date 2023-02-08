@@ -1,16 +1,23 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
+import Button from "./UI/Button";
 
 
 import "./Navbar.css";
 
 const Navbar = (props) => {
+
+  const logoutHandler = () => {
+    props.onlogout('logout')
+
+  }
   return (
     <Fragment>
       <header className="header">
         <Link  to="/">Home </Link>
         <Link  to="/about"> About </Link>
         <Link  to="/contact">Contact Us</Link>
+        <Button onClick={logoutHandler}> Logout</Button>
       </header>
     </Fragment>
   );

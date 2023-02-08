@@ -1,18 +1,14 @@
-import { Fragment, React, useEffect, useState } from "react";
+import {  React, useEffect, useState } from "react";
 import { gapi } from "gapi-script";
 import GoogleLogin from "react-google-login";
 import Card from "../UI/Card";
 import classes from "./Google.module.css";
-import Home from "../Pages/Home";
-import Button from "../UI/Button";
 
 const clientId =
   "809515788873-8h36j161t9rktleeinj0ua7f39t98pfm.apps.googleusercontent.com";
 
 function Google(props) {
   const [profile, setProfile] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
- 
 
   useEffect(() => {
     const initClient = () => {
@@ -27,6 +23,7 @@ function Google(props) {
   const onSuccess = (res) => {
     console.log("success:", res);
     setProfile(res.profileObj);
+    props.onLogged(true)
   };
   
 
@@ -35,24 +32,10 @@ function Google(props) {
   };
 
 
-  const logoutHandler = () => {
-    setProfile(false);
-    setIsLoggedIn(false);
-  };
 
   return (
     <>
-     
-
       <Card>
-      <div className={classes.logout}>
-        {profile && <Button onClick={logoutHandler}>Log Out</Button>}
-      </div>
-        {profile  && (
-          <>
-            <Home name={profile.givenName}></Home>
-          </>
-        )}
 
         {!profile && (
           <div className={classes.google}>
@@ -68,7 +51,6 @@ function Google(props) {
               onSuccess={onSuccess}
               onFailure={onFailure}
               cookiePolicy={"single_host_origin"}
-              isSignedIn={isLoggedIn}
             />
           </div>
         )}

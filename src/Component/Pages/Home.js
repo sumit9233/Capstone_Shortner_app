@@ -2,6 +2,7 @@ import { React, useState } from "react";
 import UrlInput from "../Input/Input";
 import Item from "./Item";
 import axios from "axios";
+import Card from "../UI/Card";
 
 export const Home = (props) => {
   const [shortenLink, setShortenLink] = useState([]);
@@ -35,13 +36,13 @@ export const Home = (props) => {
   
 
   return (
-    <>
+    <Card>
       <h4>Hi {props.name}, Welcome to URL Shortner App</h4>
       <br></br>
       <UrlInput onAdd={addUrlHandler}/>
       {isLoading && <p style={{textAlign:'center', fontSize:'larger'}}> Shortening the url...</p>}
       <Item items={shortenLink}></Item>
-    </>
+    </Card>
   );
 };
 
